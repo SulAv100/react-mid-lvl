@@ -1,0 +1,104 @@
+.todo-container{
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    overflow-y: scroll;
+    
+}
+.todo-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background-color: beige;
+    position: sticky 0px;
+    
+}
+.todo-input input{
+    flex: 1;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: sans-serif;
+    outline: none;
+}
+.todo-input button{
+    height: 30px;
+    border-radius: 5px;
+    width: 100px;
+    border: none;
+    background-color: rgb(167, 72, 221);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+.todo-body{
+    flex: 1;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 15px;
+    font-family: sans-serif;
+    
+}
+.single-todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.todo-actions{
+    display: flex;
+    padding: 5px 5px 5px 5px;
+    gap: 30px;
+    
+}
+
+.todo-actions button{
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.edit-todo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.edit-todo input{
+    height: 30px;
+    flex: 1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.edit-todo button{
+    width: 50px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    text-decoration-thickness: 15px;
+}
+#todo-data{
+    border: 1px solid black;
+    height: 30px;
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-family: sans-serif;
+}
