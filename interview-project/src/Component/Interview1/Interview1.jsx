@@ -4,40 +4,36 @@ import './Interview1.css';
 import TodoItem from './TodoList.jsx';
 
 function Interview1() {
+    const [initialInput, setInitialInput] = useState('');
+    const [todo, setTodo] = useState([]);
 
-    const [initialValue, setInitialValue] = useState('');
-    const [todoList, setTodoList] = useState([]);
 
-
-    const uploadTodo = ()=>{
-        if(initialValue.length>=1){
-            setTodoList((prevState)=>[
-                ...prevState, initialValue
+    const handleTodoUpload = ()=>{
+        if(initialInput.length>=1){
+            setTodo((prevState)=>[
+                ...prevState,initialInput
             ])
         }
-        setInitialValue('');
+        setInitialInput('');
     }
 
-    const keyBind = (event)=>{
-        if(event.key == 'Enter'){
-            uploadTodo();
+    const handleKeyBind = (event)=>{
+        if(event.key === 'Enter'){
+            handleTodoUpload();
         }
     }
 
-    const deleteTodo = (indexToDelete)=>{
-        setTodoList((prevState)=> prevState.filter((_,index)=> index !== indexToDelete ));
+    const handleTodoRemoval = (indexToRemove)=>{
+        setTodo((prevState) => prevState.filter((_, index) => index !== indexToRemove));
     }
-    
 
     const handleTodoEdit = (newValue,index)=>{
-        const copyData = [...todoList];
-        copyData[index] = newValue;
-        setTodoList(copyData);
+        const cloneData = [...todo];
+        cloneData[index] = newValue;
+        setTodo(cloneData);
     }
 
-
-    
-     
+   
     
 
     return (
@@ -46,22 +42,24 @@ function Interview1() {
                 <div className="todo-input">
                     <input
                         type="text"
-                        value={initialValue}
-                        onChange={(event)=> setInitialValue(event.target.value)}
-                        onKeyDown={keyBind}
+                        value={initialInput}
+                        onChange={(event)=> setInitialInput(event.target.value)}
+                        onKeyDown={handleKeyBind}
                         autoFocus
                         placeholder='Enter your task here...'
                     />
-                    <button onClick={uploadTodo} >Add task</button>
+                    <button onClick={handleTodoUpload} >Add task</button>
                 </div>
 
                 <div className="todo-body">
                         
-                        {
-                            todoList?.map((item,index)=>(
-                                <TodoItem key={index} todo={item} onDelete={()=> deleteTodo(index)} onUpdate={(newData)=> handleTodoEdit(newData,index)} />
-                            ))
-                        }
+                        
+                {
+                    todo.map((item,index)=>(
+                            <TodoItem key={index} todoData={item} onUpdate={(newValue)=>handleTodoEdit(newValue,index)} onDelete={()=> handleTodoRemoval(index)} />
+                    ))
+                }                            
+                        
                          
                 </div>
             </div>

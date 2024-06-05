@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import "./Interview1.css";
 
-function TodoItem({ todo, onDelete, onUpdate }) {
-  const [updatedData, setUpdatedData] = useState(todo);
-  const [edit, setEdit] = useState(false);
+function TodoItem({ todoData, onDelete, onUpdate }) {
+  const [fetchedData, setFetchedData] = useState(todoData);
+  const [enableEdit, setEnableEdit] = useState(false);
 
-  const handleUpdate = ()=>{
-    onUpdate(updatedData);
-    setEdit(false);
+  const handleUpload =()=>{
+    console.log("It is cliked");
+    onUpdate(fetchedData);
+    setEnableEdit(false);
   }
 
   return (
     <div className="single-todo">
-      {!edit ? (
+      {!enableEdit ? (
         <>
-          <input readOnly id="todo-data" value={updatedData} />
+          <input value={todoData} readOnly id="todo-data" />
           <div className="todo-actions">
-            <button onClick={(event)=> setEdit(true)} >Edit</button>
+            <button onClick={() => setEnableEdit(true)}>Edit</button>
             <button onClick={onDelete}>Delete</button>
           </div>
         </>
       ) : (
         <>
-          <input id="todo-data" value={updatedData} onChange={(event)=> setUpdatedData(event.target.value)} />
+          <input value={fetchedData} onChange={(event)=> setFetchedData(event.target.value)} id="todo-data" />
           <div className="todo-actions">
-            <button onClick={(event)=> setEdit(false)} >Cancel</button>
-            <button onClick={handleUpdate} >Submit</button>
+            <button onClick={()=> setEnableEdit(false)} >Cancel</button>
+            <button  onClick={handleUpload} >Submit</button>
           </div>
         </>
       )}
