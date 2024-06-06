@@ -58,7 +58,8 @@ function Interview1() {
                     todo.map((item,index)=>(
                             <TodoItem key={index} todoData={item} onUpdate={(newValue)=>handleTodoEdit(newValue,index)} onDelete={()=> handleTodoRemoval(index)} />
                     ))
-                }                            
+                }   
+                                     
                         
                          
                 </div>

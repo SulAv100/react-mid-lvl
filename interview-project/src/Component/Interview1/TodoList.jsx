@@ -23,7 +23,10 @@ function TodoItem({ todoData, onDelete, onUpdate }) {
         </>
       ) : (
         <>
-          <input value={fetchedData} onChange={(event)=> setFetchedData(event.target.value)} id="todo-data" />
+          <input style={{
+            backgroundColor: 'grey',
+            color:'red'
+          }} value={fetchedData} onChange={(event)=> setFetchedData(event.target.value)} id="todo-data" />
           <div className="todo-actions">
             <button onClick={()=> setEnableEdit(false)} >Cancel</button>
             <button  onClick={handleUpload} >Submit</button>

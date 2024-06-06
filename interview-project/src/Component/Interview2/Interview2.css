@@ -1,0 +1,33 @@
+.reducer-item-box{
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.reducer-single-item{
+    display: flex;
+    flex-direction: column;
+}
+.reducer-action-button{
+    display: flex;
+    gap: 20px;
+}
+.reducer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.reducer-action-button input{
+    border: none;
+    background-color: grey;
+    text-align: center;
+    padding: 5px;
+    font-size: 10px;
+}

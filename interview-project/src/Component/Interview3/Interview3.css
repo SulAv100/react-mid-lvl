@@ -1,0 +1,26 @@
+.tanstack-container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .tanstack-data {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+.tanstack-container button{
+    height: 40px;
+    border-radius: 5px;
+    font-family: cursive;
+    font-size: 17px;
+    border: none;
+}
+.tanstack-container button:hover{
+    background-color: rgb(174, 109, 235);
+    color: white;
+    cursor: pointer;
+}
